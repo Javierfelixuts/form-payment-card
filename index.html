@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Tarjetas Presentación</title>
+</head>
+
+<body>
+  <main class="mt-40">
+
+    <section id="card_container" style="transform-style: preserve-3d;"
+      class="rotate-y-45 relative w-full max-w-sm mx-auto h-52">
+      <div id="card_front" style="backface-visibility: hidden;"
+        class="flex flex-col items-start p-5  justify-center text-white h-52 rounded-xl w-full max-w-sm bg-white shadow shadow-lg mx-auto bg-[url('./bg_1.jpg')]">
+        <div class="w-full flex justify-between">
+          <img class="w-10" src="./chipTarjeta.png" alt="">
+          <img class="w-20 object-contain" src="./visa.png" alt="">
+        </div>
+        <div class="flex flex-col mt-4 mb-4">
+          <span class="text-xs">Número de Tarjeta</span>
+          <span id="card_number_text" class="text-white">#### #### #### ####</span>
+        </div>
+        <div class="w-full flex justify-between">
+          <div>
+            <span class="text-xs ">Nombre Tarjeta</span>
+            <p class="italic break-all" id="card_name_text">Nombre Titular </p>
+          </div>
+
+          <div>
+            <div class="w-20">
+              <label for="exp" class="text-xs">Válido hasta</label>
+              <p><span id="month_text">00</span> / <span id="year_text">00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card Back -->
+      <div id="card_back" style="transform: rotateY(180deg); backface-visibility: hidden;"
+        class="absolute top-0 flex flex-col items-start p-5  justify-center text-white h-52 rounded-xl w-full max-w-sm bg-white bg-[url('./bg_1.jpg')]">
+        <div class="w-full h-8 bg-slate-400 absolute top-10 left-0"></div>
+        <div class="flex w-full justify-between mt-20">
+          <div 
+          id="signature_text" 
+          class="w-1/2 h-8 bg-slate-200 text-black text-sm flex items-center pl-2"
+          style="font-family: 'Seaweed Script', cursive;"></div>
+          <div class="w-1/4 h-8 bg-white flex items-center">
+            <span id="cvv_text" class="ml-3 text-center text-black"></span>
+          </div>
+        </div>
+        <div id="cvv_text" class="text-left text-xs mt-10">
+          Lorem ipsum dolor 000 01 800 2571 1278 amet BANCUT adipisicing elit. Sapiente assumenda suscipit reiciendis.
+        </div>
+      </div>
+    </section>
+    <div class="w-full max-w-xs mx-auto mt-10">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+            Número de tarjeta
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="card_number" type="number" placeholder="#### #### #### ####">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="card_name">
+            Nombre Tarjeta
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="card_name" type="text" placeholder="">
+        </div>
+
+        <div class="mb-6 flex items-center justify-between">
+          <select id="month" class="p-2 outline outline-slate-200 outline-1 border-white border-r-8" name="" id="">
+            <option value="">Mes</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <select id="year" class="p-2 outline outline-slate-200 outline-1 border-white border-r-8" name="" id="">
+            <option value="">Año</option>
+            <option value="23">2023</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+            <option value="26">2026</option>
+            <option value="27">2027</option>
+            <option value="28">2028</option>
+          </select>
+          <div>
+            <input id="cvv" type="text" placeholder="CVV" class="block shadow w-20 border rounded p-2">
+          </div>
+
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">
+            Enviar
+          </button>
+
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
