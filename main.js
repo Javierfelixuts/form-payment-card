@@ -18,7 +18,7 @@
     let cvv_text = document.getElementById("cvv_text")
     //Eventos
     
-    rotateContentCard(180)
+    //rotateContentCard(180)
 
     card_number_form.addEventListener('input', onChangeCard);
     card_number_form.addEventListener('focus', () => rotateContentCard(0));
