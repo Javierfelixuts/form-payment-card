@@ -19,6 +19,18 @@
     //Eventos
     
     //rotateContentCard(180)
+    let isCardRotated = false;
+    card_container.addEventListener('click', function(e){
+        
+        isCardRotated = !isCardRotated;
+
+        if(isCardRotated){
+            rotateContentCard(180)
+        }else{
+            rotateContentCard(0)
+        }
+        
+    });
 
     card_number_form.addEventListener('input', onChangeCard);
     card_number_form.addEventListener('focus', () => rotateContentCard(0));
